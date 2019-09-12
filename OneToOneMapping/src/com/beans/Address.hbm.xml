@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+       "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.beans.Address" table="address1234">
+		<id name="addressId">
+			<column name="employeeId"/>
+			<generator class="foreign">
+				<param name="property">employee</param>
+			</generator>
+		</id>
+		<property name="addressLine1"></property>
+		<property name="city"></property>
+		<property name="state"></property>
+		<property name="country"></property>
+		<property name="pincode"></property>
+		
+		
+		<one-to-one name="employee"></one-to-one>
+	</class>
+</hibernate-mapping>  

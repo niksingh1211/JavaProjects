@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+       "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.beans.Employee" table="emp1234">
+		<id name="employeeId">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="designation"></property>
+		
+		<one-to-one name="address" cascade="all"></one-to-one>
+	</class>
+</hibernate-mapping>  
