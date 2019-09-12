@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+       "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.beans.Department" table="deptlist01">
+		<id name="dept_id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="dept_name"></property>	
+		
+		<list name="employees">
+			<key column="emp_id"></key>
+			<list-index column = "idx"></list-index>
+			<one-to-many class="java.beans.Employee"/>
+		</list>
+	</class>
+</hibernate-mapping>
